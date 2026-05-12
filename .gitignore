@@ -1,0 +1,12 @@
+.venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.DS_Store
+metabase-data/
+pgadmin-data/
+postgres-data/
+data/processed/*
+data/exports/*
+!data/processed/.gitkeep
+!data/exports/.gitkeep

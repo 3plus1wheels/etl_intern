@@ -1,0 +1,43 @@
+dataset_name: vehicle_specs
+source_file: data/raw/EV_vs_ICE_Vehicle_Specs_2015_2026.csv
+bronze_table: bronze_vehicle_specs
+silver_table: silver_vehicle_specs
+
+gold_tables:
+  vehicle_count_by_year_fuel_type: gold_vehicle_count_by_year_fuel_type
+  avg_efficiency_by_fuel_type: gold_avg_efficiency_by_fuel_type
+  avg_co2_by_category: gold_avg_co2_by_category
+  top_makes_by_ev_count: gold_top_makes_by_ev_count
+  avg_ev_range_by_year: gold_avg_ev_range_by_year
+
+columns:
+  Make: string
+  Model: string
+  Year: integer
+  Fuel_Type: string
+  Engine_Cylinders: integer
+  Engine_Size_L: float
+  Drivetrain: string
+  Transmission: string
+  City_MPG: float
+  Highway_MPG: float
+  Combined_MPG: float
+  CO2_Emissions_g_per_mile: float
+  EV_Range_miles: float
+  Vehicle_Category: string
+
+column_renames:
+  city_mpg: city_efficiency
+  highway_mpg: highway_efficiency
+  combined_mpg: combined_efficiency
+
+required_columns:
+  - make
+  - model
+  - year
+  - fuel_type
+  - vehicle_category
+
+validations:
+  year_min: 2015
+  year_max: 2026

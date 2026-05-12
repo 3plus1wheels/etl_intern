@@ -23,6 +23,12 @@ metabase/                     Metabase setup notes
 
 ## Run
 
+Create local env file:
+
+```bash
+cp .env.example .env
+```
+
 Start PostgreSQL, pgAdmin, and Metabase:
 
 ```bash
